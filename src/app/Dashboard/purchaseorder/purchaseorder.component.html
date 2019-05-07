@@ -1,0 +1,64 @@
+<div id="po">
+  <div class="row">
+    <div class="col-sm-4">
+      <label class="form-group">RFQ Reference</label>
+      <select id="inputState" class="form-control">
+        <option value="0" selected="selected">Select RFQ Reference</option>> 
+        <!-- <option *ngFor="let AddRfqForm of rfqlist" [value]="AddRfqForm.Id" >{{AddRfqForm.rfq_reference}}</option> -->
+    </select>
+    </div>
+    <div class="col-sm-4">
+      <label class="form-group">Purchase Order</label>
+      <input type="text" class="form-control" placeholder="Enter Purchase Order">
+    </div>
+    <div class="col-sm-4">
+      <label class="form-group">Purchase Date</label>
+      <input type="date" class="form-control">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <label class="form-group">EDD</label>
+      <input type="date" class="form-control">
+    </div>
+    <div class="col-sm-4">
+      <label class="form-group">Shipping Terms</label>
+      <input type="text" class="form-control" placeholder="Enter Shipping Terms">
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:20px;">
+  <table  datatable class="table table-striped table-bordered">
+    <thead class="table-info">
+      <tr>
+        <th>S.No</th>
+        <th>Reference Number</th>
+        <th>Ref S.NO</th>
+        <th>Parts No</th>
+        <th>1/L Parts No</th>
+        <th>NSN</th>
+        <th>Noumenclature</th>
+        <th>UOI</th>
+        <th>Quantity</th>
+        <th>Change in Asked Quantity</th>
+        <th>Please Mark Order Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let Addmanual of manuallist">
+        <td>{{Addmanual.SNo}}</td>
+        <td>{{Addmanual.rfq_reference}}</td>
+        <td>{{Addmanual.RefSNO}}</td>
+        <td>{{Addmanual.PartNo}}</td>
+        <td>{{Addmanual.LPartNo}}</td>
+        <td>{{Addmanual.NSN}}</td>
+        <td>{{Addmanual.Noumenclature}}</td>
+        <td>{{Addmanual.UOI}}</td>
+        <td>{{Addmanual.Quantity}}</td>
+      </tr> -->
+    </tbody>
+    <!-- <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>   -->
+  </table>
+</div>

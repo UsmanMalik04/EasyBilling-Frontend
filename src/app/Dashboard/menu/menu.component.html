@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+
+      <ul id="menu-content" class="menu-content collapse out">
+        <li>
+          <a href="#">
+            Dashboard
+          </a>
+        </li>
+
+        <li data-toggle="collapse" data-target="#products" class="collapsed active">
+          <a><i class="fa fa-file-contract fa-lg"></i> RFQ Management <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="products">
+          <li [routerLink]="['reqs']">REQs Input</li>
+          <li [routerLink] = "['uploadparts']">Upload Parts Request</li>
+          <li [routerLink] = "['sourcing']">Costing</li>
+          <li [routerLink] = "['itemlist']">Supplier Data</li>
+          <li [routerLink]="['Customer']">Customer Data </li>
+        </ul>
+
+
+        <li data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a [routerLink]="['purchaseorder']"><i class="fa fa-globe fa-lg"></i> Purchase Management <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="service">
+                    <li>Purchase Order</li>
+                   
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                    <a href="#"><i class="fa fa-credit-card fa-lg"></i> Financial Management <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                    <li>New New 1</li>
+                    <li>New New 2</li>
+                    <li>New New 3</li>
+                </ul>
+
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-line-chart fa-lg"></i> Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a [routerLink]="['/']">
+                        <i class="fa fa-users fa-lg"></i> Logout
+                    </a>
+                </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,171 @@
+<div id="sourcing">
+  <div id="myModel">
+    <div class="row">
+      <div class="col-sm-1">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          New Customer
+        </button>
+      </div>
+      <div class="col-sm-1  offset-sm-1">
+        <button type="button" class="btn btn-danger">
+          Export to excel
+        </button>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Customer</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="AddCustomerData ">
+              <div>
+                <input type="text" formControlName="Id" style="display:none;">
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Category </label>
+                <div class="col-sm-10">
+                  <select id="inputState" formControlName="category" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>RRC</option>
+                    <option>Tender</option>
+                    <option>Contract</option>
+                    <option>OTC</option>
+                    <option>Project</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Customer</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Customer" formControlName="customer">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Tel</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Tel" formControlName="tel">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Fax </label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Fax" formControlName="fax">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Preferred Payment Term</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Preferred Payment Term" formControlName="preferred_payment_term">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Bill To</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Bill To" formControlName="bill_to">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Bill Address</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Bill Address" formControlName="billing_address">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tel</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Tel" formControlName="tel_phone">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Ship To</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Ship To" formControlName="ship_to">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Ship Address</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Ship Address" formControlName="shipping_address">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tel</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Tel" formControlName="tel_mobile">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="Save($event)">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div id="table1">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped table-bordered">
+      <thead class="table-info">
+        <tr>
+          <th>Sr No</th>
+          <th>Category</th>
+          <th>Customer</th>
+          <th>Tel</th>
+          <th>Fax</th>
+          <th>Email</th>
+          <th>Preferred Payment Term</th>
+          <th>Bill TO</th>
+          <th>Bill Address</th>
+          <th>Tel</th>
+          <th>Supplier TO</th>
+          <th>Address</th>
+          <th>Tel</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let AddCustomerData of customerlist">
+          <th>{{AddCustomerData.serial_no}} </th>
+          <td>{{AddCustomerData.category}} </td>
+          <td>{{AddCustomerData.customer}} </td>
+          <td>{{AddCustomerData.tel}} </td>
+          <td>{{AddCustomerData.fax}} </td>
+          <td>{{AddCustomerData.email}} </td>
+          <td>{{AddCustomerData.preferred_payment_term}} </td>
+          <td>{{AddCustomerData.bill_to}} </td>
+          <td>{{AddCustomerData.billing_address}} </td>
+          <td>{{AddCustomerData.tel_phone}} </td>
+          <td>{{AddCustomerData.ship_to}} </td>
+          <td>{{AddCustomerData.shipping_address}} </td>
+          <td>{{AddCustomerData.tel_mobile}} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

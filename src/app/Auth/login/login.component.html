@@ -1,0 +1,32 @@
+<div id="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <form class="border border-light p-3" [formGroup]=signIn action="">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" formControlName="Id" style="display:none;">
+            <input type="email" class="form-control"  formControlName="email" id="email" name="email" placeholder="you@example.com" required
+              autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd"  formControlName="password" name="password" placeholder="Password" required>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+            </label>
+          </div>
+          <div>
+            <p>
+              <a routerLink="/signup">New Registration</a>
+            </p>
+          </div>
+          <button type="submit" class="btn btn-success" routerLink="/dashboard" (click)="Save($event)" >Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

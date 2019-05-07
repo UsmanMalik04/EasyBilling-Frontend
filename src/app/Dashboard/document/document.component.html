@@ -1,0 +1,555 @@
+<!-- 
+<form role="form" #myForm="ngForm" accept-charset="UTF-8" novalidate id="editor">
+  <div class="form-group has-feedback" 
+        [ngClass]="{ 'has-error': myckeditor.invalid && myckeditor.touched }">
+    <ckeditor [(ngModel)]="mycontent" 
+              #myckeditor="ngModel"
+              name="myckeditor"
+              required
+              [config]="ckeConfig" 
+              debounce="500" 
+              (change)="onChange($event)">
+    </ckeditor>
+    <div *ngIf="myckeditor.invalid && myckeditor.touched" class="help-block">Required field.</div>
+  </div>
+  <button [disabled]="myForm.invalid" class="btn btn-primary">Save</button>
+  </form>
+  <div [innerHTML]="mycontent"></div> -->
+<div id="editor">
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Documents')">Documents Details</button>
+    <button class="tablinks" onclick="openCity(event, 'Lineitem')">Line item</button>
+    <button class="tablinks" onclick="openCity(event, 'photoattachment')">PhotoAttachment</button>
+    <button class="tablinks" onclick="openCity(event, 'pdf')">PDFAttachment</button>
+    <button class="tablinks" onclick="openCity(event, 'private')">Private</button>
+    <button class="tablinks" onclick="openCity(event, 'view')">View</button>
+  </div>
+
+  <div id="Documents" class="tabcontent">
+    <div class="row">
+      <div class="col-sm-4">
+        <label class="form-group">Quote No</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-sm-4">
+        <label for="">Stamp</label>
+        <select name="" id="" class="form-control">
+          <option value="">Choose</option>
+          <option value="">Approved</option>
+          <option value="">CONFIDENTAL</option>
+          <option value="">CONFIRM</option>
+          <option value="">Copy</option>
+          <option value="">Duplicate</option>
+          <option value="">Paid</option>
+          <option value="">Reminder</option>
+          <option value="">Restricted</option>
+          <option value="">Revised</option>
+          <option value="">Urgent</option>
+
+        </select>
+      </div>
+      <div class="col-sm-4">
+        <label for="">Currency</label>
+        <input type="text" placeholder="Currency" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="">Date</label>
+        <input type="date" placeholder="Date" class="form-control">
+      </div>
+      <div class="col-sm-4">
+        <label for="">Sales Rep.</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="col-sm-4">
+        <label for="">Customer Ref. No.</label>
+        <input type="text" class="form-control">
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="">Shippping Date</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="col-sm-4">
+        <label for="">Shipping Term</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-sm-4">
+        <label for="">Payment Term</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <h4 style="margin-top:20px;">Customer information</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-3">
+            <label for="">Quote To</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <label for="">Address</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <label for="">Tel</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-3">
+            <label for="">Ship To</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <label for="">Address</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <label for="">Tel</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div style="margin-top:20px;" class="col-sm-6 offset-sm-6">
+        <button class="btn btn-success">Load From Customer List</button>
+        <button class="btn btn-primary">Add to Customer List</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="Lineitem" class="tabcontent">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Descripation</th>
+        <th>Unit</th>
+        <th>Unit Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+      </tr>
+
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+
+      </tr>
+
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+      </tr>
+
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+      </tr>
+
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-6">
+        <span>Sub-Total</span>
+        <input type="checkbox">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-6">
+        <span>Discount</span>
+        <input type="checkbox">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-6">
+        <span>Shipping</span>
+        <input type="checkbox">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-6">
+        <span>Total</span>
+        <input type="checkbox">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-6">
+        <span>Tax</span>
+        <input type="checkbox">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-6">
+        <span>Total</span>
+        <input type="checkbox">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+       <span>Notes</span>
+         <textarea name="" id="" cols="150" rows="10"></textarea>
+        </div>
+   </div>
+  </div>
+
+  <div id="photoattachment" class="tabcontent">
+    <div>
+      <label for="">Upload Image</label>
+      <input type="file" class="form-control">
+    </div>
+  </div>
+
+  <div id="pdf" class="tabcontent">
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="">Upload Pdf File</label>
+        <input type="file" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <div id="private" class="tabcontent">
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="">Status</label>
+        <select name="" id="" class="form-control">
+          <option value="">Choose</option>
+          <option value="">Cancel</option>
+          <option value="">Complete</option>
+          <option value="">Open</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+          <label for="">Comment</label>
+          <textarea name="" id="" cols="150" rows="10"></textarea>
+        </div>
+      </div>
+  </div>
+
+  <div id="view" class="tabcontent">
+      <table cellpadding="1" cellspacing="1" border="0" align="center" width="95%"
+      style="font-family:Helvetica;color:#000000" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+      <td align="left" width="150"><img src="../../../assets/img/220kb.jpg" width="150"></td>
+      <td align="left">
+        <table cellpadding="0" cellspacing="0" border="0" align="left" width="100%" style="white-space: pre-line">
+          <tr>
+            <td>
+              <font style="font-size:16pt;;font-weight:bold">Company Name:</font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:16pt;;font-weight:bold"></font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;">Address:</font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;"></font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;"></font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;">Tel : 12312&nbsp;&nbsp;&nbsp;&nbsp;Fax : 12312</font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;">Email : 12312</font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;">Website : 12312</font>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font style="font-size:10pt;">VAT No. : 12312&nbsp;&nbsp;&nbsp;&nbsp;Company Reg. No. : 12312
+              </font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </table>
+    <table cellpadding="1" cellspacing="1" border="0" align="center" width="95%"
+      style="font-family:Helvetica;color:#000000">
+      <tr>
+        <td align="right">Quote No. <b>10001</b></td>
+      </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="95%"
+      style="font-family:Helvetica;color:#000000">
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="65%">
+        </td>
+        <td align="center">
+          <font style="font-size:20pt;font-weight:bold">Quotation</font>
+        </td>
+        <td width="15%">
+        </td>
+      </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" align="center" width="95%" style="font-family:Helvetica">
+      <tr>
+        <td width="35%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="15%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="7">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2">
+          <font style="font-size:12pt;color:#000000">Quote To&nbsp;</font>
+        </td>
+        <td>&nbsp;</td>
+        <td align="left" colspan="4">
+          <font style="font-size:12pt;color:#000000">Ship To&nbsp;</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" style="border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt;color:#000000">
+            <br>
+          </font>
+        </td>
+        <td>&nbsp;</td>
+        <td colspan="4" align="left" style="border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt;color:#000000">
+            <br>
+          </font>
+        </td>
+      </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="95%" style="font-family:Helvetica;">
+      <tr>
+        <td width="15%">&nbsp;</td>
+        <td width="19%">&nbsp;</td>
+        <td width="15%">&nbsp;</td>
+        <td width="18%">&nbsp;</td>
+        <td width="15%">&nbsp;</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt">Date&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-left-style:none">
+          <font style="font-size:12pt">2019-03-10&nbsp;</font>
+        </td>
+        <td align="left"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt">Sales Rep.&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-left-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="left"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt">Customer Ref. No.&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-left-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+      </tr>
+      <tr>
+        <td align="left"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt">Shipping Date&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-left-style:none">
+          <font style="font-size:12pt">
+            &nbsp;</font>
+        </td>
+        <td align="left"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt">Shipping Term&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-left-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="left"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:12pt" nowrap="nowrap">Payment Term&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-left-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+      </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="95%" style="font-family:Helvetica;">
+      <tr>
+        <td width="6%">&nbsp;</td>
+        <td width="64%">&nbsp;</td>
+        <td width="6%">&nbsp;</td>
+        <td width="7%">&nbsp;</td>
+        <td width="6%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-right-style:none">
+          <font style="font-size:12pt">ID&nbsp;</font>
+        </td>
+        <td align="center"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-right-style:none">
+          <font style="font-size:12pt">Description&nbsp;</font>
+        </td>
+        <td align="center"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-right-style:none">
+          <font style="font-size:12pt">Unit&nbsp;</font>
+        </td>
+        <td align="center"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-right-style:none">
+          <font style="font-size:12pt">Unit Price ($)&nbsp;</font>
+        </td>
+        <td align="center"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-right-style:none">
+          <font style="font-size:12pt">Qty&nbsp;</font>
+        </td>
+        <td align="center"
+          style="background-color:#E9E9E9;color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-right-style:solid">
+          <font style="font-size:12pt">Total ($)&nbsp;</font>
+        </td>
+      </tr>
+      <tr>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-top-style:none;border-right-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-top-style:none;border-right-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="center"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-top-style:none;border-right-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="right"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-top-style:none;border-right-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="center"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-top-style:none;border-right-style:none">
+          <font style="font-size:12pt">&nbsp;</font>
+        </td>
+        <td align="right"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000;border-top-style:none;border-right-style:solid">
+          <font style="font-size:12pt">&nbsp;&nbsp;
+          </font>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" colspan="4" style="color:#000000">
+          <font style="font-size:12pt"></font>
+        </td>
+        <td align="right" colspan="2" style="color:#000000">
+          <font style="font-size:12pt;white-space:normal">
+            <table cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td width="50%"></td>
+                <td width="50%"></td>
+              </tr>
+            </table>
+          </font>
+        </td>
+      </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="95%" style="font-family:Helvetica;">
+      <tr>
+        <td height="20">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" style="color:#000000">
+          <font style="font-size:12pt">Notes&nbsp;</font>
+        </td>
+      </tr>
+      <tr height="100">
+        <td valign="top" align="left"
+          style="color:#000000;border-style:solid;border-width:1px;border-color:#000000">
+          <font style="font-size:8pt;white-space: pre; ">
+            &nbsp;</font>
+        </td>
+      </tr>
+    </table>
+    <table cellpadding="1" cellspacing="1" border="0" align="center" width="95%"
+      style="font-family:Helvetica;color:#000000">
+      <tr height="50">
+        <td></td>
+      </tr>
+      <tr>
+        <td style="font-size:11pt;text-align:left" width="30%"></td>
+        <td style="font-size:11pt;text-align:center" width="40%"></td>
+        <td style="font-size:11pt;text-align:right" width="30%"></td>
+      </tr>
+    </table>
+    </div>
+</div>

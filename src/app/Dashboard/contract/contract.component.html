@@ -1,0 +1,58 @@
+<div id="res">
+    <form [formGroup]="AddRfqForm">
+        <div class="row">
+            <div class="col-sm-6">
+                    <input type="text" formControlName="Id" style="display:none;">
+                <div class="form-group">
+                    <label>RFQ Reference</label>
+                    <input type="text" class="form-control" formControlName="rfq_reference" placeholder="RFQ Reference">
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <label>Date</label>
+                <input type='Date' class="form-control" formControlName="date">
+            </div>
+            <div class="col-sm-6">
+                <label for="inputState">Type of Order</label>
+                <select id="inputState" class="form-control" formControlName="type_of_order"> 
+                    <option  [ngValue]='null' selected disabled>Choose</option>
+                    <option>RRC</option>
+                    <option>Tender</option>
+                    <option>Contract</option>
+                    <option>OTC</option>
+                    <option>Project</option>
+                </select>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Date of submission</label>
+                    <input type='Date' class="form-control" formControlName="date_of_submission">
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>User</label>
+                    <input type="text" class="form-control" placeholder="User" formControlName="user">
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Systems</label>
+                    <input type="text" class="form-control" placeholder="Systems" formControlName="systems">
+                </div>
+
+            </div>
+                <!-- <div class="col-sm-3 offset-sm-3">
+                    <button type="button" class="btn btn-primary btn-block form-control">Add new order</button>
+
+                </div> -->
+                <div class="col-sm-3">
+                    <button type="button" class="bbtn btn-danger btn-block form-control" (click)="Save($event)" >Save</button>
+                </div>
+        </div>
+    </form>
+</div>
